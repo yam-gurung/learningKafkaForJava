@@ -2,16 +2,24 @@ kafka-topics --list --bootstrap-server localhost:9092
 
 kafka-topics --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic first-topic
 
+kafka-topics --create --replication-factor 1 --partitions 1 --topic first-topic --bootstrap-server localhost:9092
+
 kafka-topics --describe --bootstrap-server localhost:9092 --topic first-topic
 
 kafka-console-consumer --bootstrap-server localhost:9092 --topic first-topic
 
-kafka-console-producer --broker-list localhost:9092 --topic first-topic
+kafka-console-producer --bootstrap-server localhost:9092 --topic first-topic
 
 kafka-topics --delete --bootstrap-server localhost:9092 --topic first-topic                           
 
 Note:
 
-For delete add the following in kafka server.properties
+For delete add the following in kafka server.propertßies
 
 delete.topic.enable=true
+
+
+To start kafka now and restart at login:
+  brew services start kafka
+Or, if you don't want/need a background service you can just run:
+  /opt/homebrew/opt/kafka/bin/kafka-server-start /opt/homebrew/etc/kafka/server.properties
