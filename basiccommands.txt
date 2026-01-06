@@ -23,3 +23,6 @@ To start kafka now and restart at login:
   brew services start kafka
 Or, if you don't want/need a background service you can just run:
   /opt/homebrew/opt/kafka/bin/kafka-server-start /opt/homebrew/etc/kafka/server.properties
+
+-- to stop
+/opt/homebrew/opt/kafka/bin/kafka-server-stop /opt/homebrew/etc/kafka/server.properties
