@@ -31,5 +31,6 @@ source ~/.zshrc
 Start Services: Run confluent local services start to launch Kafka, ZooKeeper, Schema Registry, etc..
 
 http://localhost:8081/ for schema registry
+http://localhost:8081/schemas
 
 Stop Services: Use confluent local services stop
