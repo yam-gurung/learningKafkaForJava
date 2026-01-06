@@ -1,0 +1,32 @@
+Step 1: Identify your shell
+Open your Terminal application and run the following command:
+bash
+echo $0
+This will output the name of your shell, typically zsh or bash. 
+Step 2: Edit the configuration file 
+Based on your shell, open the appropriate configuration file in a text editor like nano. 
+For zsh (default on modern macOS): ~/.zshrc
+bash
+nano ~/.zshrc
+For bash: ~/.bash_profile or ~/.bashrc (prefer ~/.bash_profile for login shells)
+bash
+nano ~/.bash_profile
+ 
+Step 3: Add the environment variables 
+In the editor, add the following lines to the end of the file. You may need to adjust the directory path (/usr/local/confluent/) if you installed Confluent Platform in a different location. 
+bash
+export CONFLUENT_HOME="/usr/local/confluent"
+export PATH=$PATH:$CONFLUENT_HOME/bin
+Step 4: Save and exit 
+Press Control + O to write the changes.
+Press Enter to confirm the filename.
+Press Control + X to exit the nano editor. 
+Step 5: Apply the changes
+For the changes to take effect immediately in your current terminal session, source the configuration file: 
+For zsh:
+bash
+source ~/.zshrc
+
+
+Start Services: Run confluent local services start to launch Kafka, ZooKeeper, Schema Registry, etc..
+Stop Services: Use confluent local services stop
