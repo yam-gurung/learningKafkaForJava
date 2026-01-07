@@ -1,0 +1,10 @@
+{
+"namespace": "com.yam.kakfa.avro",
+"type": "record",
+"name": "Photo",
+"fields": [
+{"name": "photoName","type":"string"},
+{"name": "photoId","type":"string"},
+{"name": "photoService","type":"string"}
+]
+}
