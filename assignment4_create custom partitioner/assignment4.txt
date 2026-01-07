@@ -1,0 +1,6 @@
+/opt/homebrew/opt/kafka/bin/kafka-server-start /opt/homebrew/etc/kafka/server.properties
+
+yam@yams-MacBook-Air ~ % kafka-topics --create --replication-factor 1 --partitions 10 --topic PhotoPartitionedTopic --bootstrap-server localhost:9092
+
+yam@yams-MacBook-Air assignment4_create custom partitioner % kafka-topics --describe --bootstrap-server localhost:9092 --topic PhotoPartitionedTopic
+
